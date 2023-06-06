@@ -1,0 +1,31 @@
+<p>rest works!</p>
+
+
+<mat-card style="max-width: 75%">
+<form [formGroup]="itemValues" (ngSubmit)=submitted()>
+
+  <mat-form-field >
+    <mat-label [matTooltip]="info.name">Name</mat-label>
+    <input   matInput formControlName="nameProd">
+  </mat-form-field>
+
+  <mat-form-field >
+    <mat-label>Price</mat-label>
+    <input matInput formControlName="priceProd">
+  </mat-form-field>
+
+<div></div>
+
+
+<div></div>
+
+<button type=submit [disabled]=!itemValues.valid  mat-flat-button color=primary >Primary</button>
+
+</form>
+
+
+{{itemValues.value|json}}
+{{isValid()}}
+</mat-card>
+
+<!-- <button mat-flat-button color=primary (click)=switchX()>go</button> -->
